@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Book</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Add New Book</h2>
+        <form action="{{ url_for('add_book') }}" method="POST" class="border p-4 rounded shadow-sm">
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Book Title</label>
+                <input type="text" id="title" name="title" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="author" class="form-label">Author</label>
+                <input type="text" id="author" name="author" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="classification_no" class="form-label">Classification No.</label>
+                <input type="text" id="classification_no" name="classification_no" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="cutter_no" class="form-label">Cutter No.</label>
+                <input type="text" id="cutter_no" name="cutter_no" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="publisher_name" class="form-label">Publisher Name</label>
+                <input type="text" id="publisher_name" name="publisher_name" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input type="number" id="quantity" name="quantity" class="form-control" min="1" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="price" class="form-label">Price (in PKR)</label>
+                <input type="number" step="0.01" id="price" name="price" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="donation_received" class="form-label">Donation Received From</label>
+                <input type="text" id="donation_received" name="donation_received" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label for="date_of_purchase" class="form-label">Date of Purchase</label>
+                <input type="date" id="date_of_purchase" name="date_of_purchase" class="form-control" required>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary px-4">Add Book</button>
+                <a href="{{ url_for('view_books') }}" class="btn btn-secondary px-4">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
